@@ -15,26 +15,26 @@ local library = {
 	configuration = {
 		hideKeybind = Enum.KeyCode.RightControl,
 		smoothDragging = false,
-		easingStyle = Enum.EasingStyle.Quart,
+		easingStyle = Enum.EasingStyle.Linear,
 		easingDirection = Enum.EasingDirection.Out
 	},
 	colors = {
-		main = Color3.fromRGB(255, 0, 0),
+		main = Color3.fromRGB(255, 255, 255),
 		background = Color3.fromRGB(0, 0, 0),
 		outerBorder = Color3.fromRGB(15, 15, 15),
-		innerBorder = Color3.fromRGB(255, 0, 0),
+		innerBorder = Color3.fromRGB(255, 255, 255),
 		topGradient = Color3.fromRGB(0, 0, 0),
 		bottomGradient = Color3.fromRGB(29, 29, 29),
 		sectionBackground = Color3.fromRGB(0, 0, 0),
-		section = Color3.fromRGB(255, 0, 0),
-		otherElementText = Color3.fromRGB(255, 0, 0),
+		section = Color3.fromRGB(255, 255, 255),
+		otherElementText = Color3.fromRGB(255, 255, 255),
 		elementText = Color3.fromRGB(255, 255, 255),
-		elementBorder = Color3.fromRGB(255, 20, 20),
+		elementBorder = Color3.fromRGB(255, 255, 255),
 		selectedOption = Color3.fromRGB(255, 255, 255),
 		unselectedOption = Color3.fromRGB(40, 40, 40),
-		hoveredOptionTop = Color3.fromRGB(255, 0, 0),
-		unhoveredOptionTop = Color3.fromRGB(255, 255, 255),
-		hoveredOptionBottom = Color3.fromRGB(255, 255, 255),
+		hoveredOptionTop = Color3.fromRGB(255, 255, 255),
+		unhoveredOptionTop = Color3.fromRGB(0, 0, 0),
+		hoveredOptionBottom = Color3.fromRGB(0, 0, 0),
 		unhoveredOptionBottom = Color3.fromRGB(35, 35, 35),
 		tabText = Color3.fromRGB(255, 255, 255)
 	},
@@ -1111,7 +1111,7 @@ function library:CreateWindow(options, ...)
 				newToggle.Parent = sectionHolder
 				newToggle.BackgroundColor3 = Color3.new(0, 0, 0)
 				newToggle.BackgroundTransparency = 1
-				newToggle.Size = UDim2.new(1, 0, 0, 20)
+				newToggle.Size = UDim2.new(1, 0, 0, 12)
 				toggle.Name = "toggle"
 				toggle.Parent = newToggle
 				toggle.Active = true
@@ -1138,7 +1138,7 @@ function library:CreateWindow(options, ...)
 				colored[1 + #colored] = {toggleInner, "BorderColor3", "elementBorder"}
 				toggleInner.Position = UDim2.fromScale(0.5, 0.5)
 				toggleInner.Selectable = true
-				toggleInner.Size = UDim2.new(1.2, 0, 1.2, 0)
+				toggleInner.Size = UDim2.new(1, 0, 1, 0)
 				toggleInner.Image = "rbxassetid://2454009026"
 				toggleInner.ImageColor3 = library.colors.bottomGradient
 				local colored_toggleInner_ImageColor3 = {toggleInner, "ImageColor3", "bottomGradient"}
@@ -1147,7 +1147,7 @@ function library:CreateWindow(options, ...)
 				toggleButton.Parent = newToggle
 				toggleButton.BackgroundColor3 = Color3.new(0, 0, 0)
 				toggleButton.BackgroundTransparency = 1
-				toggleButton.Size = UDim2.fromScale(2, 1)
+				toggleButton.Size = UDim2.fromScale(2, 2)
 				toggleButton.ZIndex = 5
 				toggleButton.Font = Enum.Font.SourceSans
 				toggleButton.Text = ""
@@ -5952,7 +5952,5 @@ library.W = library.CreateWindow
 
 local Wait = library.subs.Wait
 
+
 return library, library_flags, library.subs
-
-
-
